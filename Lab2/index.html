@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清华大学无线校园网 Tsinghua University Wireless Network</title>
+    <link rel="icon" href="image/icon32.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        body {
+            min-width: 768px;
+            background-color: #dadbdc;
+            background-image: url(image/background.png);
+            background-repeat: repeat-x;
+            background-position: top;
+        }
+
+        main {
+            margin: auto;
+            width: 768px;
+        }
+
+        .logo {
+            float: left;
+            margin: 16px 0 32px -86px;
+            background-image: url(image/logo.gif);
+            background-repeat: no-repeat;
+        }
+
+        .logo .title {
+            display: block;
+            width: 320px;
+            height: 105px;
+            background-image: url(image/title.png);
+            background-repeat: no-repeat;
+            margin-left: 82px;
+        }
+
+        .qrcode {
+            margin-top: 15px;
+            margin-right: 220px;
+            float: right;
+            text-align: center;
+        }
+
+        .qrcode p {
+            line-height: 18px;
+            font-family: "Microsoft YaHei", SimHei, "Apple LiGothic Medium";;
+            font-size: small;
+        }
+
+        .attsinghua {
+            position: relative;
+            top: -120px;
+            left: 402px;
+            float: right;
+        }
+
+        .content {
+            position: relative;
+            top: -90px;
+            float: left;
+            width: 100%;
+            height: 496px;
+            background-image: url(image/content_shadow.png);
+            background-repeat: no-repeat;
+            background-position: 0 416px;
+        }
+
+        .hi {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 720px;
+            height: 304px;
+            background-color: #e64e2e;
+            background-image: url(image/greeting.png);
+            background-repeat: no-repeat;
+            background-position: 32px 28px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .triangle_left {
+            position: absolute;
+            top: 304px;
+            left: 32px;
+            border-color: #e64e2e transparent;
+            border-width: 48px 48px 0 0;
+            border-style: solid;
+        }
+
+        .notice_box {
+            position: absolute;
+            top: 128px;
+            left: -16px;
+            width: 320px;
+            height: 172px;
+        }
+
+        .corner {
+            border-color: transparent #ad3b23;
+            border-width: 16px 16px 0 0;
+            border-style: solid;
+            width: 0;
+            height: 0;
+        }
+
+        .notice {
+            position: relative;
+            width: 320px;
+            height: 160px;
+            border-width: 16px 16px 0 0;
+            background-color: #e6562e;
+            background-image: url(image/notice.png);
+            background-repeat: no-repeat;
+            background-position: 14px 10px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .login {
+            position: absolute;
+            top: 32px;
+            left: 304px;
+            width: 464px;
+            height: 304px;
+            background-color: #f2f2f2;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            margin: 32px;
+        }
+
+        .field {
+            float: left;
+            margin-bottom: 16px;
+            width: 100%;
+        }
+
+        .label_text {
+            position: relative;
+            float: left;
+            height: 48px;
+            font-family: "Microsoft YaHei", SimHei, "Apple LiGothic Medium";
+            font-size: 21px;
+        }
+
+        .label_text .en {
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 16px;
+        }
+
+        input[type=text], input[type=password] {
+            float: right;
+            width: 298px;
+            height: 42px;
+            border-color: #e6e6e6;
+            border-style: solid;
+            border-width: 1px;
+            padding: 2px;
+            background-color: #ffffff;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 34px;
+        }
+
+        input[type=button] {
+            margin-top: 16px;
+            width: 398px;
+            height: 46px;
+            border-color: #9cb22e;
+            border-style: solid;
+            border-width: 1px;
+            background-color: #c0ce55;
+            background-image: url(image/connect.png);
+            background-repeat: no-repeat;
+            background-position: center 0;
+        }
+
+        .connect:hover {
+            background-color: #d2e042;
+            background-position: center -47px;
+        }
+
+        .connect:active {
+            background-color: #aac30b;
+            background-position: center -94px;
+        }
+
+        .triangle_right {
+            position: absolute;
+            top: 336px;
+            left: 688px;
+            border-color: #f2f2f2 transparent;
+            border-width: 48px 48px 0 0;
+            border-style: solid;
+        }
+
+        .download {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 304px;
+            height: 112px;
+            background-image: url(image/download.png);
+            background-repeat: no-repeat;
+            background-position: 0 8px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #system {
+            position: absolute;
+            bottom: 0;
+            left: -16px;
+            width: 320px;
+            height: 48px;
+            background-color: #808080;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+
+        }
+
+        #system li a {
+            position: absolute;
+            bottom: 16px;
+            display: block;
+            padding-top: 36px;
+            float: left;
+            min-width: 34px;
+            height: 16px;
+            color: #ffffff;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        #system li a:hover {
+            text-decoration: underline;
+        }
+
+        .windows {
+            left: 16px;
+            background-image: url(image/windows.gif);
+            background-repeat: no-repeat;
+            background-position: 0 0;
+        }
+
+        .macos {
+            left: 80px;
+            background-image: url(image/mac.gif);
+            background-repeat: no-repeat;
+            background-position: 0 0;
+        }
+
+        .linux {
+            left: 144px;
+            background-image: url(image/linux.gif);
+            background-repeat: no-repeat;
+            background-position: 0 0;
+        }
+
+        .android {
+            left: 207px;
+            background-image: url(image/android.gif);
+            background-repeat: no-repeat;
+            background-position: 0 0;
+        }
+
+        .ios {
+            left: 271px;
+            background-image: url(image/ios.gif);
+            background-repeat: no-repeat;
+            background-position: 0 0;
+        }
+
+        #menu {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 464px;
+            height: 32px;
+            list-style: none;
+            display: block;
+        }
+
+        #menu li {
+            float: left;
+            padding-left: 36px;
+            font-family: "Microsoft YaHei", SimHei, "Apple LiGothic Medium";
+            font-size: 12px;
+        }
+
+        #menu li a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        #menu li a:hover {
+            text-decoration: underline;
+        }
+
+        #menu .en {
+            font-size: 11px;
+            font-family: Verdana, Geneva, sans-serif;
+            color: #4f4f4f;
+        }
+
+        #menu .bookmark {
+            background-image: url(image/bookmark.gif);
+            background-repeat: no-repeat;
+            background-position: 8px 0;
+        }
+
+        #menu .help {
+            background-image: url(image/help.gif);
+            background-repeat: no-repeat;
+            background-position: 4px 0;
+        }
+
+        #menu .contact {
+            float: right;
+            background-image: url(image/contact.gif);
+            background-repeat: no-repeat;
+            background-position: 4px 0;
+        }
+
+        #menu .contact .title {
+            float: left;
+        }
+
+        #menu .contact .detail {
+            float: left;
+            margin: 2px 0 0 8px;
+            line-height: 1.3;
+        }
+
+        #menu .contact .detail a {
+            color: #4f4f4f;
+        }
+
+        .foot {
+            float: left;
+            position: relative;
+            top: -94px;
+            bottom: 0;
+            margin-top: 64px;
+            width: 100%;
+            height: 100%;
+            text-align: right;
+            font-size: 12px;
+            color: #6e6f6f;
+        }
+
+        .foot .en {
+            font-size: 11px;
+            font-family: Verdana, Geneva, sans-serif;
+        }
+
+    </style>
+    <script>
+        function login() {
+            var uname = document.getElementById('uname').value;
+            var password = document.getElementById('password').value;
+
+            if(uname == "" || password == "") {
+                alert("用户名或密码为空");
+            }
+            else {
+                window.location.href = 'succeed.html?uname=' + uname;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <main>
+        <!-- 顶部logo 清华大学无线校园网 -->
+        <div class="logo">
+            <div class="title"></div>
+        </div>
+
+        <!-- 上方二维码 -->
+        <div class="qrcode">
+            <img src="image/qrcode_for_258.jpg" width="129" height="129">
+            <p>欢迎关注“清华大学信息服务”</p>
+        </div>
+
+        <!-- 上方At Tsinghua图片 -->
+        <div class="attsinghua">
+            <a href="http://mobileapp.tsinghua.edu.cn" target="_blank">
+                <img src="image/attsinghua.png">
+            </a>
+        </div>
+
+        <!-- 中间内容 -->
+        <div class="content">
+            <!-- 橙色背景hi -->
+            <div class="hi"></div>
+
+            <!-- 左下角橙色三角形 -->
+            <div class="triangle_left"></div>
+
+            <!-- 通知 -->
+            <div class="notice_box">
+                <div class="corner"></div>
+                <div class="notice"></div>
+            </div>
+
+            <!-- 右侧白色登录界面 -->
+            <div class="login">
+                <!-- 登录表单 -->
+                <form>
+                    <div class="field">
+                        <div class="label_text" for="uname">
+                            <p>用户名</p>
+                            <p class="en">User&nbsp;ID</p>
+                        </div>
+                        <input type="text" name="uname" id="uname">
+                    </div>
+                    <div class="field">
+                        <div class="label_text" for="password">
+                            <p>密码</p>
+                            <p class="en">Password</p>
+                        </div>
+                        <input type="password" name="password" id="password">
+                    </div>
+
+                    <!-- 按钮 连接 -->
+                    <input type="button" name="connect" class="connect" onclick="login()">
+                </form>
+            </div>
+
+            <!-- 右侧白色三角形 -->
+            <div class="triangle_right"></div>
+
+            <!-- 左下角下载客户端 -->
+            <div class="download">
+                <ul id="system">
+                    <li><a class="windows" title="Windows">Windows</a></li>
+                    <li><a class="macos" title="MacOS">MacOS</a></li>
+                    <li><a class="linux" title="Linux">Linux</a></li>
+                    <li><a class="android" title="Android">Android</a></li>
+                    <li><a class="ios" title="iOS">iOS</a></li>
+                </ul>
+            </div>
+
+            <!-- 右下角菜单 -->
+            <ul id="menu">
+                <li class="bookmark">
+                    <a href="javascript:addBookmark('TUNet 无线网登录');" title="收藏">
+                        <p>收藏</p>
+                        <p class="en">Bookmark&nbsp;This&nbsp;Page</p>
+                    </a>
+                </li>
+                <li class="help">
+                    <a href="https://net.tsinghua.edu.cn/help/help.html" title="帮助">
+                        <p>帮助</p>
+                        <p class="en">Help</p>
+                    </a>
+                </li>
+                <li class="contact">
+                    <div class="title">
+                        <p>联系</p>
+                        <p class="en">Contact</p>
+                    </div>
+                    <div class="detail en">
+                        <p>+86-10-62784859</p>
+                        <a href="mailto:its@tsinghua.edu.cn" title="电子邮件">its@tsinghua.edu.cn</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 底部信息 -->
+        <div class="foot">
+            <p>清华大学信息化技术中心</p>
+            <p class="en">Information Technology Center of Tsinghua University</p>
+        </div>
+
+    </main>
+</body>
+</html>

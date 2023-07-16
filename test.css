@@ -1,0 +1,7 @@
+body {
+    background-color: yellow;
+}
+
+body .main {
+    color: blue;
+}
