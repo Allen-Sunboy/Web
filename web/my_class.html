@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+
+<head>
+    <!--- Basic Page Needs  -->
+    <meta charset="utf-8">
+    <title>Web前端技术实训课程（课程号：44100343）——我的介绍</title>
+    <meta name="Keywords" content="我的关键字1,我的关键字2,我的关键字3">
+    <meta name="Description" content="我的网站描述...">
+    <meta name="author" content="曹大海">
+    <meta name="robots" content="all">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Meta  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+</head>
+
+<body>
+    <main>
+        <section>
+            <header><h1>曹大海</h1></header>
+        </section>
+        <section>
+            <hr>
+        </section>
+        <section>
+            <h2>
+                我的选课
+            </h2>
+        </section>
+        <section>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>上课时间</th>
+                        <th>星期一</th>
+                        <th>星期二</th>
+                        <th>星期三</th>
+                        <th>星期四</th>
+                        <th>星期五</th>
+                        <th>星期六</th>
+                        <th>星期日</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>8:50-11:25</td>
+                        <td>数据结构</td>
+                        <td></td>
+                        <td>编译原理</td>
+                        <td></td>
+                        <td>操作系统</td>
+                        <td></td>
+                        <td></td>                        
+                    </tr>
+                    <tr>
+                        <td>14:00-16:00</td>
+                        <td></td>
+                        <td>数字模拟电路</td>
+                        <td>计算机系统结构</td>
+                        <td></td>
+                        <td>体育课</td>
+                        <td></td>
+                        <td></td>  
+                    </tr>
+                    <tr>
+                        <td>18:30-21:30</td>
+                        <td></td>
+                        <td>计算机组成原理</td>
+                        <td>C语言</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>  
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td rowspan="2">注：</td>
+                        <td colspan="3">上课地点：三教2302（教室课容:120）</td>
+                        <td colspan="4">答疑时间：每周下午2：00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">上课通知：学堂在线提醒</td>
+                        <td colspan="4">班主任：闻立杰</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </section>
+        <section>
+            <h2>
+                我的收藏视频
+            </h2>
+        </section>
+        <section>
+            <!--
+                属性        值           描述
+                autoplay	autoplay	如果出现该属性，则视频在就绪后马上播放。
+                controls	controls	如果出现该属性，则向用户显示控件，比如播放按钮。
+                height	    pixels	    设置视频播放器的高度。
+                loop	    loop	    如果出现该属性，则当媒介文件完成播放后再次开始播放。
+                muted	    muted	    如果出现该属性，视频的音频输出为静音。
+                poster	    URL	        规定视频正在下载时显示的图像，直到用户点击播放按钮。
+                preload	    auto
+                metadata
+                none	                如果出现该属性，则视频在页面加载时进行加载，并预备播放。如果使用 "autoplay"，则忽略该属性。
+                src       	URL	        要播放的视频的 URL。
+                width	    pixels	    设置视频播放器的宽度。
+
+            -->
+            <video width="320" height="240" controls>
+                <source src="movie.mp4"  type="video/mp4">
+                <source src="movie.ogg"  type="video/ogg">
+                您的浏览器不支持 HTML5 video 标签。
+              </video>
+        </section>
+        <section>
+            <h2>
+                我的收藏音频
+            </h2>
+        </section>
+        <section>
+            <!--
+            属性	    值	         描述
+            autoplay	autoplay	如果出现该属性，则音频在就绪后马上播放。
+            controls	controls	如果出现该属性，则向用户显示控件，比如播放按钮。
+            loop	    loop	    如果出现该属性，则每当音频结束时重新开始播放。
+            muted	    muted	    规定视频输出应该被静音。
+            preload	    auto
+                        metadata
+                        none	
+                                    如果出现该属性，则音频在页面加载时进行加载，并预备播放。
+
+                                    如果使用 "autoplay"，则忽略该属性。
+
+            src       	URL	        要播放的音频的 URL。
+
+            -->
+            <audio controls>
+                <source src="horse.ogg" >
+                <source src="horse.mp3" >
+              您的浏览器不支持 audio 元素。
+              </audio>
+        </section>
+        <section>
+            <div>
+                上传视频或音频文件
+            </div>
+            <div>
+                <select name="type">
+                    <option value="0">音频</option>
+                    <option value="1">视频</option>
+                </select><input type="file" name="upload" accept="video/*,audio/*"/><!--  -->
+            </div>
+        </section>
+
+        <section>
+            <svg width="800" height="500">
+                <rect width="100%" height="100%" fill="#66cc99" />
+                <circle cx="350" cy="350" r="40" stroke="red" stroke-width="4" fill="yellow" />
+                <circle cx="150" cy="100" r="80" fill="green" />
+                <text x="150" y="125" font-size="60" text-anchor="middle" fill="white">
+                  SVG
+                </text>
+                <rect x="10" y="10" width="30" height="30" stroke="black" fill="transparent" stroke-width="5"/>
+                <rect x="60" y="10" rx="10" ry="10" width="30" height="30" stroke="black" fill="transparent" stroke-width="5"/>
+              
+                <circle cx="25" cy="75" r="20" stroke="red" fill="transparent" stroke-width="5"/>
+                <ellipse cx="75" cy="75" rx="20" ry="5" stroke="red" fill="transparent" stroke-width="5"/>
+              
+                <line x1="10" x2="50" y1="110" y2="150" stroke="orange" fill="transparent" stroke-width="5"/>
+                <polyline points="60 110 65 120 70 115 75 130 80 125 85 140 90 135 95 150 100 145"
+                    stroke="orange" fill="transparent" stroke-width="5"/>
+              
+                <polygon points="50 160 55 180 70 180 60 190 65 205 50 195 35 205 40 190 30 180 45 180"
+                    stroke="green" fill="transparent" stroke-width="5"/>
+              
+                <path d="M20,230 Q40,205 50,230 T90,230" fill="none" stroke="blue" stroke-width="5"/>
+
+
+                <defs>
+                    <linearGradient id="Gradient1">
+                      <stop offset="5%" stop-color="white"/>
+                      <stop offset="95%" stop-color="blue"/>
+                    </linearGradient>
+                    <linearGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="5%" stop-color="red"/>
+                      <stop offset="95%" stop-color="orange"/>
+                    </linearGradient>
+                
+                    <pattern id="Pattern" x="0" y="0" width=".25" height=".25">
+                      <rect x="0" y="0" width="50" height="50" fill="skyblue"/>
+                      <rect x="0" y="0" width="25" height="25" fill="url(#Gradient2)"/>
+                      <circle cx="25" cy="25" r="20" fill="url(#Gradient1)" fill-opacity="0.5"/>
+                    </pattern>
+                
+                  </defs>
+                
+                  <rect fill="url(#Pattern)" stroke="black" x="400" y="200" width="200" height="200"/>
+                
+
+            </svg>
+
+        </section>
+    </main>
+    <footer>
+        <p>@ 2023 曹大海 </p>
+    </footer>
+</body>
+
+</html>

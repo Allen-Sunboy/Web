@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+
+<head>
+    <!--- Basic Page Needs  -->
+    <meta charset="utf-8">
+    <title>Web前端技术实训课程（课程号：44100343）——导航</title>
+    <meta name="Keywords" content="我的关键字1,我的关键字2,我的关键字3">
+    <meta name="Description" content="我的网站描述...">
+    <meta name="author" content="曹大海">
+    <meta name="robots" content="all">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Meta  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: rgb(82, 0, 82);
+            background-image: linear-gradient(to bottom, rgb(212, 52, 212), rgb(82, 0, 82));
+            overflow: hidden;
+        }
+
+        .bg {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: calc(100vh);
+            background-image: url("bg1.png");
+            background-size: cover;
+            background-attachment: fixed;
+
+        }
+
+        a,
+        a:hover,
+        a:focus {
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.8s;
+        }
+
+        .divItem {
+            width: 100%;
+            height: 26px;
+            padding: 6px;
+            transition: all 0.8s ease-in-out;
+            font-weight: bold;
+            color: cornsilk;
+        }
+
+        .divItem:hover {
+            background-color: darkorchid;
+            color: floralwhite;
+        }
+    </style>
+
+</head>
+
+<body>
+    <main class="bg">
+        <div>
+            <img src="th-logo.png" title="清华大学" />
+        </div>
+        <div class="divItem">
+            <a href="my_intro.html" target="content">我的介绍</a>
+        </div>
+        <div class="divItem">
+            <a href="my_class.html" target="content">我的课程</a>
+        </div>
+        <div class="divItem">
+            <a href="my_works.html" target="content">我的阅读</a>
+        </div>
+    </main>
+</body>
+
+</html>

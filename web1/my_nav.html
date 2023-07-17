@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+
+<head>
+    <!--- Basic Page Needs  -->
+    <meta charset="utf-8">
+    <title>Web前端技术实训课程（课程号：44100343）——导航</title>
+    <meta name="Keywords" content="我的关键字1,我的关键字2,我的关键字3">
+    <meta name="Description" content="我的网站描述...">
+    <meta name="author" content="曹大海">
+    <meta name="robots" content="all">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Meta  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <style>
+        body {
+            /* length or % */
+            padding: 0;
+            /*
+                padding:25px 50px 75px 100px; // 顺时针，上右下左
+                padding-top:25px;
+                padding-bottom:25px;
+                padding-right:50px;
+                padding-left:50px;
+            */
+            margin: 0;
+            /* length or % */
+            /*
+                margin:25px 50px 75px 100px; // 顺时针，上右下左
+                margin-top:100px;
+                margin-bottom:100px;
+                margin-right:50px;
+                margin-left:50px;
+            */
+            background-color: rgb(82, 0, 82);
+            /* 设置元素的背景颜色。*/
+            /*background-repeat: repeat; repeat(重复)  repeat-x(水平重复); repeat-y(垂直重复); no-repeat(不重复); inherit(从父元素继承) */
+            /*background-attachment:fixed; scroll(随页面滚动而滚动);fixed(不随页面滚动而滚动);local(随元素内容滚动而滚动);initial(该属性的默认值);inherit(从父元素继承)*/
+            /*background-position:  left top 靠左靠上
+                                    left center 靠左居中
+                                    left bottom 靠左靠下
+                                    right top 靠右靠上
+                                    right center 靠右居中
+                                    right bottom 靠右靠下
+                                    center top 居中靠上
+                                    center center 居中居中
+                                    center bottom 居中靠下*/
+            background-image: linear-gradient(to bottom, rgb(212, 52, 212), rgb(82, 0, 82));
+            /* 属性描述了元素的背景图像. 
+            background-image: url('URL'); 	图像的URL
+                              none; 无图像背景会显示。这是默认
+                              linear-gradient(); 创建一个线性渐变的 "图像"(从上到下)
+                              radial-gradient(); 用径向渐变创建 "图像"。 (center to edges)
+                              repeating-linear-gradient(); 创建重复的线性渐变 "图像"。
+                              repeating-radial-gradient(); 创建重复的径向渐变 "图像"
+                              inherit; 指定背景图像应该从父元素继承 */
+
+            /*
+            overflow的值：
+                visible	默认值。内容不会被修剪，会呈现在元素框之外。
+                hidden	内容会被修剪，并且其余内容是不可见的。
+                scroll	内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。
+                auto	如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。
+                inherit	规定应该从父元素继承 overflow 属性的值。
+                注意:overflow 属性只工作于指定高度的块元素上。
+            */
+            overflow: hidden;
+        }
+
+        .bg {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            /*
+            calc() 函数允许在指定 CSS 属性值时执行计算。它对于计算 length、 percentage、 
+            time、 numbers、integers、frequencies 和 angles 等特别有用。
+            语法：calc( Expression)
+            calc(50px + 50px)
+            calc(100% - 30px)
+            calc(100% / 2)
+            calc(100vh * 2)
+            calc(10px + 5vw)
+            注意：在编写 calc() 函数语法时，必须在每个操作之间包含空格，特别是在使用 + 和 - 操作符时，否则表达式将无效。考虑下面的例子：
+            calc(50% -4px)  这个表达式是无效的，改成calc(50% - 4px)就生效了，减号和4px之间加了一个空格。
+            */
+            height: calc(100vh);
+            background-image: url("bg1.png");
+            /*
+                background-size 属性详解，background-size 指定背景图像大小，以象素或百分比显示，当指定为百分比时，
+                大小会由所在区域的宽度、高度以及 background-origin（图片的起始位置） 的位置决定，
+                还可以通过 cover 和 contain 来对图片进行伸缩。
+
+                语法：background-size : contain | cover | 100px 100px | 50% 100%;
+                background-size ：contain; // 缩小图片来适应元素的尺寸（保持像素的长宽比），是图片宽高最长的那个边覆盖元素一边即可；
+                background-size ：cover; // 扩展图片来填满元素（保持像素的长宽比），是图片宽高最短的那个边覆盖元素一边即可；
+                background-size ：100px 100px; // 调整图片到指定大小；
+                background-size ：50% 100%; // 调整图片到指定大小，百分比相对于包含元素的尺寸（并且并不需要包含元素显示设置宽高）
+
+            */
+            background-size: cover;
+            background-attachment: fixed;
+
+        }
+
+        #div1 {
+            /*background-color: blue;*/
+        }
+
+        /*
+        所有CSS伪类/元素：
+            :checked	例如：input:checked	选择所有选中的表单元素
+            :disabled	例如：input:disabled	选择所有禁用的表单元素
+            :empty	例如：p:empty	选择所有没有子元素的p元素
+            :enabled	例如：input:enabled	选择所有启用的表单元素
+            :first-of-type	例如：p:first-of-type	选择的每个 p 元素是其父元素的第一个 p 元素
+            :in-range	例如：input:in-range	选择元素指定范围内的值
+            :invalid	例如：input:invalid	选择所有无效的元素
+            :last-child	例如：p:last-child	选择所有p元素的最后一个子元素
+            :last-of-type	例如：p:last-of-type	选择每个p元素是其母元素的最后一个p元素
+            :not(selector)	例如：:not(p)	选择所有p以外的元素
+            :nth-child(n)	例如：p:nth-child(2)	选择所有 p 元素的父元素的第二个子元素
+            :nth-last-child(n)	例如：p:nth-last-child(2)	选择所有p元素倒数的第二个子元素
+            :nth-last-of-type(n)	例如：p:nth-last-of-type(2)	选择所有p元素倒数的第二个为p的子元素
+            :nth-of-type(n)	例如：p:nth-of-type(2)	选择所有p元素第二个为p的子元素
+            :only-of-type	例如：p:only-of-type	选择所有仅有一个子元素为p的元素
+            :only-child	例如：p:only-child	选择所有仅有一个子元素的p元素
+            :optional	例如：input:optional	选择没有"required"的元素属性
+            :out-of-range	例如：input:out-of-range	选择指定范围以外的值的元素属性
+            :read-only	例如：input:read-only	选择只读属性的元素属性
+            :read-write	例如：input:read-write	选择没有只读属性的元素属性
+            :required	例如：input:required	选择有"required"属性指定的元素属性
+            :root	例如：root	选择文档的根元素
+            :target	例如：#news:target	选择当前活动#news元素(点击URL包含锚的名字)
+            :valid	例如：input:valid	选择所有有效值的属性
+            :link	例如：a:link	选择所有未访问链接
+            :visited	例如：a:visited	选择所有访问过的链接
+            :active	例如：a:active	选择正在活动链接
+            :hover	例如：a:hover	把鼠标放在链接上的状态
+            :focus	例如：input:focus	选择元素输入后具有焦点
+            :first-letter	例如：p:first-letter	选择每个<p> 元素的第一个字母
+            :first-line	例如：p:first-line	选择每个<p> 元素的第一行
+            :first-child	例如：p:first-child	选择器匹配属于任意元素的第一个子元素的 <p> 元素
+            :before	例如：p:before	在每个<p>元素之前插入内容
+            :after	例如：p:after	在每个<p>元素之后插入内容
+            :lang(language)	例如：p:lang(it)	为<p>元素的lang属性选择一个开始值
+        
+        */
+        a,
+        /* CSS伪类是用来添加一些选择器的特殊效果。 */
+        /* a:link {} */
+        /* a:visited {} */
+        /* a:active {} */
+        /* 伪类的语法： selector:pseudo-class {property:value;} */
+        /*  
+            -webkit-transition解释：
+            -moz- : Firefox浏览器私有属性
+            -webkit- : Safari & Chrome浏览器私有属性
+            -o- : Opera浏览器私有属性
+            -khtml- : Konqueror浏览器私有属性
+            -ms- : Internet Explorer浏览器私有属性
+            -chrome- : Google Chrome专用前缀，浏览器私有属性
+            这些是为了兼容老版本的写法，比较新版本的浏览器都支持直接写：border-radius。
+        */
+        a:hover,
+        a:focus {
+            color: inherit;
+            /*none（无划线），overline（上划线），line-through（中划线），underline（下划线）*/
+            text-decoration: none;
+            /* transition: 属性设置元素当过渡效果，四个简写属性为： 
+                    transition-property：指定CSS属性的name，transition效果
+                    transition-duration：transition效果需要指定多少秒或毫秒才能完成
+                    transition-timing-function：指定transition效果的转速曲线，值如下：
+                         ease 默认值，慢速开始，先加速，再减速 
+                         linear 匀速运动 
+                         ease-in 加速运动 
+                         ease-out 减速运动 
+                         ease-in-out 先加速 后减速 
+                         cubic-bezier() 来制定时序函数（贝塞尔曲线）
+
+                    transition-delay：定义transition效果开始的时候
+                语法：transition: transition-property transition-duration transition-timing-function transition-delay;
+            */
+            transition: all 0.8s;
+        }
+
+        .divItem {
+            width: 100%;
+            height: 26px;
+            padding: 6px;
+            transition: all 0.8s ease-in-out;
+            /* 设置不同的字体粗细 
+            normal	默认值。定义标准的字符。
+            bold	定义粗体字符。
+            bolder	定义更粗的字符。
+            lighter	定义更细的字符。
+            font-weight也可以是：100，200，300，400，500，600，700，800，900，
+            定义由细到粗的字符。400 等同于 normal，而 700 等同于 bold。*/
+            font-weight: bold;
+            color: cornsilk;
+            /*white or rgb(0, 0, 0) or #000000*/
+        }
+
+        /*:hover是伪类*/
+        .divItem:hover {
+            background-color: darkorchid;
+            color: floralwhite;
+        }
+    </style>
+
+</head>
+
+<body>
+    <main class="bg">
+        <div id="div1">
+            <img src="th-logo.png" title="清华大学" />
+        </div>
+        <div class="divItem">
+            <a href="my_intro.html" target="content">我的介绍</a>
+        </div>
+        <div class="divItem">
+            <a href="my_class.html" target="content">我的课程</a>
+        </div>
+        <div class="divItem">
+            <a href="my_works.html" target="content">我的阅读</a>
+        </div>
+    </main>
+</body>
+
+</html>

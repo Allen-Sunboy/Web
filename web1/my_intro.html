@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+
+<head>
+    <!--- Basic Page Needs  -->
+    <meta charset="utf-8">
+    <title>Web前端技术实训课程（课程号：44100343）——我的介绍</title>
+    <meta name="Keywords" content="我的关键字1,我的关键字2,我的关键字3">
+    <meta name="Description" content="我的网站描述...">
+    <meta name="author" content="曹大海">
+    <meta name="robots" content="all">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Meta  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <style>
+        body {
+            background-color: rgb(234, 217, 250);
+        }
+
+        .line {
+            /*border: border-width border-style border-color inherit*/
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgb(158, 69, 241), rgb(223, 209, 236));
+        }
+
+        .titleSection {
+            height: 100px;
+        }
+
+        .title {
+            font-size: 32pt;
+            color: rgb(72, 12, 128);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            /* -webkit-box-reflect: below 0px -webkit-linear-gradient(top, rgba(250, 250, 250, 0), rgba(250, 250, 250, .05) 70%, rgba(250, 250, 250, 0.3));
+            box-reflect: below 0px linear-gradient(top, rgba(250, 250, 250, 0), rgba(250, 250, 250, .05) 70%, rgba(250, 250, 250, 0.3));*/
+            -webkit-box-reflect: below 0px -webkit-linear-gradient(transparent, transparent 50%, rgba(0, 0, 0, .8));
+            box-reflect: below 0px linear-gradient(transparent, transparent 50%, rgba(0, 0, 0, .8));
+        }
+
+        .myphoto {
+            /*box-shadow: h-shadow v-shadow blur spread color inset;*/
+            box-shadow: 0 0 20px 10px #8e8df5;
+            transition: all 0.8s;
+        }
+
+        .myphoto:hover {
+            /*box-shadow: h-shadow v-shadow blur spread color inset;*/
+            box-shadow: 0 0 20px 10px #f148b9;
+        }
+
+        .liItem {
+            font-size: 1.5rem;
+            color: #1a3fa7;
+        }
+
+        .card {
+            /*border: border-width border-style border-color inherit*/
+            border: 1px solid rgb(125, 56, 190);
+            padding: 10px;
+            width: 100%;
+            border-radius: 6px;
+            /*
+                border-top-left-radius:     4px 2px;
+                border-top-right-radius:    3px 4px;
+                border-bottom-right-radius: 6px 2px;
+                border-bottom-left-radius:  3px 4px;
+            */
+            background-image: linear-gradient(to right, rgb(223, 209, 236), rgb(158, 69, 241));
+        }
+
+        .tdClass {
+            padding: 10px;
+        }
+
+        .square {
+            min-width: 50px;
+            min-height: 40px;
+            background-color: #1a3fa7;
+        }
+
+        .articleCaption {
+            font-size: 24pt;
+            text-align: center;
+            color: rgb(72, 12, 128);
+            margin: 0;
+            padding: 0;
+        }
+
+        .authorInfo {
+            font-size: 12pt;
+            color: rgb(104, 24, 179);
+            text-align: center;
+            /*
+             text-align: 
+                left	把文本排列到左边。默认值：由浏览器决定。
+                right	把文本排列到右边。
+                center	把文本排列到中间。
+                justify	实现两端对齐文本效果。
+                inherit	规定应该从父元素继承 text-align 属性的值
+            */
+
+        }
+
+        .articleContent {
+            font-size: 18pt;
+            color: rgb(59, 10, 104);
+            padding: 20px;
+        }
+
+        .articleFoot {
+            font-size: 1em;
+            color: rgb(104, 24, 179);
+            padding: 20px;
+        }
+
+        .articleComment {
+            color: rgb(72, 12, 128);
+            font-size: 1em;
+            background-color: rgb(241, 232, 250);
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid rgb(190, 190, 212);
+        }
+
+        .commentLabel {
+            color: rgb(72, 12, 128);
+            padding: 4px;
+            margin: 10px;
+        }
+
+        .formClass {
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .row {
+            margin: 0.2em;
+            padding: 0.2em;
+        }
+
+        .formInput {
+            height: 24px;
+            min-width: 300px;
+            font-size: 16px;
+            padding: 4px;
+            border-radius: 4px;
+            border: 1px solid rgb(117, 79, 153);
+        }
+
+        .formSelect {
+            height: 30px;
+            min-width: 300px;
+            font-size: 16px;
+            padding: 4px;
+            border-radius: 4px;
+            border: 1px solid rgb(117, 79, 153);
+        }
+
+        .rowArea {
+            /*none;*/
+            display: flex;
+            /*align-items: stretch|center|flex-start|flex-end|baseline|initial|inherit;
+                stretch	默认值。元素被拉伸以适应容器。如果指定侧轴大小的属性值为'auto'，则其值会使项目的边距盒的尺寸尽可能接近所在行的尺寸，但同时会遵照'min/max-width/height'属性的限制。
+                center 元素位于容器的中心。弹性盒子元素在该行的侧轴（纵轴）上居中放置。（如果该行的尺寸小于弹性盒子元素的尺寸，则会向两个方向溢出相同的长度）。
+                flex-start 元素位于容器的开头。弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴起始边界。
+                flex-end 元素位于容器的结尾。弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴结束边界。
+                baseline 元素位于容器的基线上。如弹性盒子元素的行内轴与侧轴为同一条，则该值与'flex-start'等效。其它情况下，该值将参与基线对齐。
+                initial	设置该属性为它的默认值。请参阅 initial。
+                inherit	从父元素继承该属性。请参阅 inherit。
+            */
+            align-items: flex-start;
+            margin: 0.2rem;
+            padding: 0.2rem;
+        }
+
+        .formTextArea {
+            font-size: 16px;
+            padding: 4px;
+            border-radius: 4px;
+            border: 1px solid rgb(117, 79, 153);
+        }
+
+        .rowButton {
+            display: flex;
+            /*justify-content: flex-start|flex-end|center|space-between|space-around|initial|inherit;
+                flex-start	默认值。从行首起始位置开始排列。
+                flex-end	从行尾位置开始排列。
+                center	居中排列。
+                space-between	均匀排列每个元素，首个元素放置于起点，末尾元素放置于终点。
+                space-evenly	均匀排列每个元素，每个元素之间的间隔相等。
+                space-around	均匀排列每个元素，每个元素周围分配相同的空间。
+                initial	设置该属性为它的默认值。请参阅 initial。
+                inherit	从父元素继承该属性。请参阅 inherit。
+            */
+            justify-content: flex-start;
+            margin: 0.2rem;
+            padding: 0.2rem;
+        }
+
+        .formButton {
+            font-size: 16px;
+            height: 40px;
+            width: 100px;
+            padding: 4px;
+            border-radius: 4px;
+            background-color: rgb(143, 130, 156);
+            border: 1px solid rgb(117, 79, 153);
+        }
+    </style>
+
+</head>
+
+<body>
+    <main>
+        <section class="titleSection">
+            <h1 class="title">曹大海</h1>
+        </section>
+        <section>
+            <hr class="line">
+        </section>
+        <section>
+            <table class="card">
+                <tr>
+                    <td class="tdClass">
+                        <img class="myphoto" src="my_photo.jpg" />
+                    </td>
+                    <td style="vertical-align: top;" class="tdClass">
+                        <ul>
+                            <li class="liItem">
+                                2005年硕士毕业于清华大学
+                            </li>
+                            <li class="liItem">
+                                2014年博士毕业于澳大利亚斯文本大学
+                            </li>
+                            <li class="liItem">
+                                2018年回国创业
+                            </li>
+                            <li class="liItem">
+                                2019年在清华大学大数据系统软件国家工程研究中心担任资深专家
+                            </li>
+                            <li class="liItem">
+                                现担任清滦科技前端CTO
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <section>
+            <header class="title">
+                <h3><span class="square">&nbsp;&nbsp;</span>&nbsp;Web前端夜话</h3>
+            </header>
+        </section>
+        <section>
+            <article class="articleContent">
+                <header class="articleCaption">Web技术起源</header>
+                <p class="authorInfo"><a href="#">dahai</a> 发表于<time>2023.07.05</time>，共有<a href="#comments">2条评论</a>。
+                </p>
+                <p style="text-align: center;"><img src="Tim Berners-Lee.png" class="myphoto" /></p>
+                <p>
+                    <strong>Tim
+                        Berners-Lee（蒂姆·伯纳斯·李）</strong>，英国科学家，万维网之父，于1989年在欧洲核子研究组织（CERN）正式提出万维网的设想。该网络最初是为了满足世界各地大学和研究所的科学家之间对自动信息共享的需求而设计和开发的，这也是为什么HTML的顶层声明是
+                    <code>document</code>，标签名、文档对象模型的名称也是由此而来。
+                </p>
+                <p>
+                    1990年12月，他开发出了世界上第一个网页浏览器。1993年4月30日，欧洲核子研究组织将万维网软件置于公共领域，把万维网推广到全世界，让万维网科技获得迅速的发展，深深改变了人类的生活面貌。
+                </p>
+                <p>
+                    1991年8月，第一个静态页面诞生了，这是由Tim Berners-Lee发布的，想要告诉人们什么是万维网。从第一个静态页面至今，历史的车轮滚滚向前，一个又一个技术诞生和沉寂。
+                </p>
+                <p style="text-align: center;">
+                    <img src="earlierwebpage.png" />
+                </p>
+                <p>
+                    他创造了超文本标记语言（HTML），并创建了历史上第一个网站。当然，现在只剩下了由 <i>CERN</i> 恢复的网站副本：<a href="http://info.cern.ch"
+                        target="_blank">info.cern.ch</a>
+                </p>
+            </article>
+            <article class="articleContent">
+                <header class="articleCaption">CSS的来源</header>
+                <p class="authorInfo"><a href="#">dahai</a> 发表于<time>2023.07.12</time>，共有<a href="#comments">0条评论</a>。
+                </p>
+                <p>
+                    在HTML迅猛发展的 90 年代，不同的浏览器根据自身的 HTML 语法结构来支持实现不同的样式语言。在最初的 HTML 版本中，由于只含有很少的显示属性，所以用户可以自己决定显示页面的方式。
+                </p>
+                <p>
+                    但是，不同的人对于网页的显示样式要求不一样，于是装饰网页样式的 CSS（层叠样式表，Cascading Style Sheets）诞生了。
+                </p>
+                <p>
+                    早期 CSS 的语法设计看上去类似后来的 JavaScript 语法（当时 JavaScript 尚未存在），实际上，CSS 的这个写法借鉴了 X11 Window System 中的 X 资源。
+                </p>
+                <p style="text-align: center;">
+                    <img src="earlierwebcss.png" />
+                </p>
+                <p>
+                    1994 年，Håkon Wium Lie 最初提出了 CSS 的想法，联合当时正在设计 Argo 的浏览器的Bert Bos，他们决定一起合作设计 CSS，于是创造了 CSS
+                    的最初版本。紧接着，他们在芝加哥的Mosaic and the Web 大会上第一次正式提出了 CSS 的建议，1995 年他们一起再次展示了这个建议。当时 W3C 刚刚建立，W3C 对 CSS
+                    很感兴趣，为此专门组织了一次讨论会。
+                </p>
+                <p>
+                    1996 年 12 月，W3C 推出了 CSS 规范的第一版本。
+                </p>
+                <p>
+                    1997 年，W3C 颁布 CSS1.0 版本 ，CSS1.0 较全面地规定了文档的显示样式，可分为选择器（id、class、element、element和class组合）、样式属性、伪类、
+                    对象几个部分。这一规范立即引起了各方的关注，随即微软和网景公司的浏览器均能支持 CSS1.0，这为 CSS 的发展奠定了基础。
+                </p>
+                <p>
+                    1998 年，W3C 发布了 CSS 的第二个版本，目前的主流浏览器都采用这标准。CSS2 的规范是基于 CSS1 设计的，包含了 CSS1
+                    所有的功能，并扩充和改进了很多更加强大的属性。包括选择器、位置模型、布局、表格样式、媒体类型、伪类、光标样式。
+                </p>
+                <p>
+                    2005 年 12 月，W3C 开始 CSS3 标准的制定，到目前为止该标准还没有最终定稿。
+                </p>
+                <p>
+                    CSS 经历了 20 多年的发展，从 PC 端到移动端，在前端工程化不断进步的今天，随着CSS的规范不断的完善升级，前端业务复杂度越来越高，带来的工程也越来越庞大，我们前端开发者对 CSS
+                    工程化的方案也不断地探索。现在一大批 CSS 预处理和后处理工具涌现，比较流行的 CSS 预处理器有 Sass、Less，CSS 后处理器诸如
+                    clean-css、AutoPrefixer、Rework、PostCSS 等。
+                </p>
+                <p>
+                    那么关于 CSS 将来发展会怎么样？未来 CSS 还能不能胜任自己的角色，会不会有新的模型代替它？对于这些问题，Håkon Wium Lie 认为 CSS
+                    目前还能够胜任，还没有看到能够取代它的新模型出现，新的技术肯定会层出不穷，但应该是对 CSS 的扩展而不是代替。他还表示，我们今天写的 CSS 代码，500 年后的计算机仍然能看懂。
+                </p>
+            </article>
+            <footer class="articleFoot">
+                发表于<time>2023-07-05 22:22:17</time>，相关标签为<a href="/tags/framework">前端夜话</a>、<a
+                    href="/tags/design-pattern">Web技术的前世今生</a>
+            </footer>
+            <div class="commentLabel">
+                <h3>最热评论2条</h3>
+            </div>
+            <div>
+                <article class="articleComment">
+                    <p><label>石破天</label>：原来如此，学习了！</p>
+                    <p>发表于2023-07-06 10:22:14</p>
+                </article>
+                <article class="articleComment">
+                    <p><label>理解万岁</label>：回顾历史，可以知道Web从哪里来，也就能更深刻预见Web的未来发展。</p>
+                    <p>发表于2023-07-06 14:23:00</p>
+                </article>
+            </div>
+            <div class="commentLabel">
+                <h3>网友热评</h3>
+            </div>
+            <form class="formClass">
+                <div class="row">
+                    <label>名字：</label><input class="formInput" placeholder="请填写您的姓名" name="yourname"></input>
+                </div>
+                <div class="row">
+                    <label>职业：</label><select class="formSelect" name="job">
+                        <option value="0">学生</option>
+                        <option value="1">老师</option>
+                    </select>
+                    <label>其他人是否可见？</label><input type="radio" name="allvisible">是<input type="radio" name="allvisible"
+                        checked>否
+                </div>
+                <div class="rowArea">
+                    <label>评论：</label><textarea class="formTextArea" placeholder="请填写您的评论" rows="6"
+                        cols="100"></textarea>
+                </div>
+                <div class="rowButton">
+                    <button type="button" class="formButton">发表评论</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <aside>
+        <div class="commentLabel">
+            <h3>热门标签</h3>
+        </div>
+        <div class="commentLabel">
+            <label>Web技术</label>，<label>Web历史</label>，<label>HTML</label>，<label>CSS</label>，<label>JavaScript</label>
+        </div>
+    </aside>
+
+    <footer>
+        <p>&copy; 2023 曹大海 </p>
+    </footer>
+
+</body>
+
+</html>

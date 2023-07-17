@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+
+<head>
+    <!--- Basic Page Needs  -->
+    <meta charset="utf-8">
+    <title>Web前端技术实训课程（课程号：44100343）——我的阅读</title>
+    <meta name="Keywords" content="我的关键字1,我的关键字2,我的关键字3">
+    <meta name="Description" content="我的网站描述...">
+    <meta name="author" content="曹大海">
+    <meta name="robots" content="all">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Meta  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <style>
+        body {
+            background-color: rgb(217, 250, 247);
+        }
+
+        .line {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgb(158, 69, 241), rgb(223, 209, 236));
+        }
+
+        .titleSection {
+            height: 100px;
+        }
+
+        .title {
+            font-size: 24pt;
+            color: rgb(118, 33, 197);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            text-shadow: 0px 4px 4px rgba(84, 135, 150, 1);
+        }
+
+        .readingTable {
+            width: 100%;
+            font-size: 16pt;
+            color: rgb(19, 76, 114);
+            border-radius: 4px;
+            border: 1px solid rgb(22, 87, 139);
+        }
+
+        .readingHeadTr {
+            background-color: rgb(63, 146, 241);
+        }
+
+        .thClass {
+            padding: 10px;
+        }
+
+        .tdClass {
+            border: 1px solid rgb(22, 87, 139);
+        }
+
+        .readingFootTr {
+            background-color: rgb(200, 226, 255);
+        }
+
+        .formClass {
+            text-align: start;
+        }
+
+        .row {
+            margin: 0.2em;
+            padding: 0.2em;
+        }
+
+        .formInput {
+            background-color: rgb(217, 250, 247);
+            height: 24px;
+            min-width: 300px;
+            font-size: 16px;
+            padding: 4px;
+            border: 0;
+            border-bottom: 1px solid rgb(117, 79, 153);
+        }
+
+        .formInput1 {
+            background-color: rgb(217, 250, 247);
+            height: 24px;
+            font-size: 16px;
+            padding: 4px;
+            border: 0;
+            border-bottom: 1px solid rgb(117, 79, 153);
+        }
+
+        .formButton {
+            font-size: 16px;
+            height: 40px;
+            width: 100px;
+            padding: 4px;
+            border-radius: 4px;
+            background-color: rgb(143, 130, 156);
+            border: 1px solid rgb(117, 79, 153);
+            transition: all 0.8s;
+        }
+
+        .formButton:hover {
+            color: aliceblue;
+            box-shadow: 0px 10px 10px rgb(150, 189, 201);
+        }
+    </style>
+
+</head>
+
+<body>
+    <main>
+        <section class="titleSection">
+            <h1 class="title">曹大海</h1>
+        </section>
+        <section>
+            <hr class="line">
+        </section>
+        <section>
+            <header class="title">
+                <h3><span class="square">&nbsp;&nbsp;</span>&nbsp;我的读书单记录</h3>
+            </header>
+        </section>
+        <section>
+            <table class="readingTable">
+                <thead>
+                    <tr class="readingHeadTr">
+                        <th class="thClass">
+                            序号
+                        </th>
+                        <th class="thClass">
+                            书名
+                        </th>
+                        <th class="thClass">
+                            作者
+                        </th>
+                        <th class="thClass">
+                            出版机构
+                        </th>
+                        <th class="thClass">
+                            出版时间
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="booklist">
+                    <tr>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            《论中国》
+                        </td>
+                        <td>
+                            亨利.基辛格
+                        </td>
+                        <td>
+                            中信出版社
+                        </td>
+                        <td>
+                            2015年
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            《量子计算与量子信息》（10周年版）
+                        </td>
+                        <td>
+                            Michael A. Nielsen, Isaac L. Chuang
+                        </td>
+                        <td>
+                            中国工信出版集团，电子工业出版
+                        </td>
+                        <td>
+                            2022年
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot class="readingFootTr">
+                    <tr>
+                        <td colspan="5">
+                            该书单是我入校以来的读书单
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </section>
+        <section>
+            <header class="title">
+                <h3><span class="square">&nbsp;&nbsp;</span>&nbsp;添加新的读书记录</h3>
+            </header>
+        </section>
+        <section class="formClass">
+            <form>
+                <div class="row">
+                    <label>序号</label>：<input id="no" class="formInput" type="number" name="no" placeholder="请输入序号"
+                        title="请输入序号" />
+                </div>
+                <div class="row">
+                    <label>书名</label>：<input id="bookname" class="formInput" type="text" name="title"
+                        placeholder="请输入书名" title="请输入书名" />
+                </div>
+                <div class="row">
+                    <label>作者</label>：<input id="author" class="formInput" type="text" name="author"
+                        placeholder="请输入作者姓名" title="请输入作者姓名" />
+                </div>
+                <div class="row">
+                    <label>出版机构</label>：<input id="press" class="formInput" type="text" name="press"
+                        placeholder="请输入出版机构" title="请输入出版机构" />
+                </div>
+                <div class="row">
+                    <label>出版时间</label>：<input id="pdate" class="formInput" type="date" name="pubtime" min="2018-01-01"
+                        max="2030-12-31" placeholder="请输入出版时间" title="请输入出版时间" />
+                </div>
+                <div class="row">
+                    <label>字体颜色</label>：<input id="fontcolor" class="formInput1" type="color" name="fontcolor"
+                        title="请选择字体颜色" />
+                </div>
+                <div class="row">
+                    <button type="button" class="formButton" onclick="addBookRecord()">添加</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 曹大海 </p>
+    </footer>
+
+    <script>
+
+        function addBookRecord() {
+            let booklist = document.getElementById("booklist");
+            let no = document.getElementById("no");
+            let bookname = document.getElementById("bookname");
+            let author = document.getElementById("author");
+            let press = document.getElementById("press");
+            let pdate = document.getElementById("pdate");
+            let fontcolor = document.getElementById("fontcolor");
+            if (no.value == "") {
+                alert("序号不能为空");
+                return;
+            }
+            if (bookname.value == "") {
+                alert("书名不能为空");
+                return;
+            }
+            if (author.value == "") {
+                alert("作者不能为空");
+                return;
+            }
+            if (press.value == "") {
+                alert("出版社不能为空");
+                return;
+            }
+            if (pdate.value == "") {
+                alert("出版时间");
+                return;
+            }
+            let tr = document.createElement("tr");
+            let td1 = document.createElement("td");
+            tr.appendChild(td1);
+            td1.innerHTML = no.value;
+            let td2 = document.createElement("td");
+            tr.appendChild(td2);
+            td2.innerHTML = bookname.value;
+            let td3 = document.createElement("td");
+            tr.appendChild(td3);
+            td3.innerHTML = author.value;
+            let td4 = document.createElement("td");
+            tr.appendChild(td4);
+            td4.innerHTML = press.value;
+            let td5 = document.createElement("td");
+            tr.appendChild(td5);
+            td5.innerHTML = pdate.value.substr(0, 4) + "年";
+            tr.style.color = fontcolor.value;
+            booklist.appendChild(tr);
+        }
+
+
+    </script>
+
+    <style>
+            /* 控制编辑区域的 */
+          input[type="date"]::-webkit-datetime-edit{
+            /* content: '起始时间'; */
+            color: rgb(188,188,188); 
+            padding-left: 10px;
+          }
+          /* 控制年月日这个区域的 */
+          input[type="date"]::-webkit-datetime-edit-fields-wrapper { 
+            background-color: #eee; 
+          } 
+          /* 这是控制年月日之间的斜线或短横线的 */
+          input[type="date"]::-webkit-datetime-edit-text {
+            color: blue; 
+            padding: 0 .3em; 
+          } 
+          /* 控制年字 */
+          input[type="date"]::-webkit-datetime-edit-year-field { 
+            color: purple; 
+          } 
+          /* 控制月字 */
+          input[type="date"]::-webkit-datetime-edit-month-field { 
+            color: red; 
+          } 
+          /* 控制日字 */
+          input[type="date"]::-webkit-datetime-edit-day-field  { 
+            color: pink; 
+          } 
+        /*控制下拉小箭头的*/ 
+        input[type="date"]::-webkit-calendar-picker-indicator {
+          display: inline-block;
+          width: 15px;
+          height: 15px;
+          /* position: absolute;
+          top: 12px;
+          right: 0px; */
+          border: 1px solid #ccc;
+          border-radius: 2px;
+          box-shadow: inset 0 1px #fff, 0 1px #eee;
+          background-color: #eee;
+          /* background:url('../images/icon.png') -188px -99px; */
+          background-image: -webkit-linear-gradient(top, #f0f0f0, #e6e6e6);
+          color: #666; 
+        } 
+        /* 去掉date中上下小三角，但是保留input类型为number的小三角。 */
+        input[type=date]::-webkit-inner-spin-button { 
+          visibility: hidden; 
+        }
+        /*----------用来移除叉叉按钮 鼠标移上去还会显示----------*/ 
+        /* input[type="date"]::-webkit-clear-button{
+         display:none;
+        } */
+    </style>
+
+
+</body>
+
+</html>

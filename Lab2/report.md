@@ -63,3 +63,5 @@ function logout() {
 [https://net.tsinghua.edu.cn/wireless/](https://net.tsinghua.edu.cn/wireless/) 该页面的源代码
 
 [https://developer.mozilla.org/zh-CN/docs/Web](https://developer.mozilla.org/zh-CN/docs/Web)
+
+其中，关于通过网址传递和解析参数的方法，主要参考：[https://developer.mozilla.org/zh-CN/docs/Web/API/Location/search](https://developer.mozilla.org/zh-CN/docs/Web/API/Location/search)

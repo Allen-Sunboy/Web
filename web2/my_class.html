@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+
+<head>
+    <!--- Basic Page Needs  -->
+    <meta charset="utf-8">
+    <title>Web前端技术实训课程（课程号：44100343）——我的介绍</title>
+    <meta name="Keywords" content="我的关键字1,我的关键字2,我的关键字3">
+    <meta name="Description" content="我的网站描述...">
+    <meta name="author" content="曹大海">
+    <meta name="robots" content="all">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Meta  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="d3.min.js"></script>
+
+
+    <style>
+        body {
+            background-color: rgb(234, 217, 250);
+        }
+
+        .line {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgb(158, 69, 241), rgb(223, 209, 236));
+        }
+
+        .titleSection {
+            height: 100px;
+        }
+
+        .title {
+            font-size: 24pt;
+            color: rgb(118, 33, 197);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            text-shadow: 0px 4px 4px rgba(84, 135, 150, 1);
+        }
+
+        .square {
+            min-width: 50px;
+            min-height: 40px;
+            background-color: rgb(118, 33, 197);
+            box-shadow: 0px 4px 4px rgba(84, 135, 150, 1);
+        }
+
+        .classCalender {
+            width: 100%;
+            border: 1px solid rgb(72, 12, 128);
+            border-radius: 6px;
+
+        }
+
+        .theadTr {
+            height: 50px;
+            background-color: rgb(154, 85, 224);
+            color: azure;
+        }
+
+        .cellTd {
+            height: 60px;
+            padding: 20px;
+        }
+
+        .cellTr1 {
+            background-color: rgb(194, 159, 223);
+            font-size: 18pt;
+        }
+
+        .cellTr1:hover {
+            background-color: rgb(169, 129, 209);
+            color: azure;
+        }
+
+        .cellTr2 {
+            background-color: rgb(215, 192, 238);
+            font-size: 18pt;
+        }
+
+        .cellTr2:hover {
+            background-color: rgb(169, 129, 209);
+            color: azure;
+        }
+
+        .cellFootTr2 {
+            background-color: rgb(215, 192, 238);
+            font-size: 14pt;
+        }
+
+        .cellFootTr1 {
+            background-color: rgb(194, 159, 223);
+            font-size: 14pt;
+        }
+
+        .cellFootTr1:hover,
+        .cellFootTr2:hover {
+            background-color: rgb(169, 129, 209);
+            color: azure;
+        }
+
+        .videoClass {
+            text-align: center;
+        }
+
+        .formSelect {
+            height: 34px;
+            min-width: 300px;
+            font-size: 16px;
+            padding: 4px;
+            border-radius: 4px;
+            border: 1px solid rgb(117, 79, 153);
+        }
+
+        .formInput {
+            height: 24px;
+            min-width: 300px;
+            font-size: 16px;
+            padding: 4px;
+            border-radius: 4px;
+            border: 1px solid rgb(117, 79, 153);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="titleSection">
+            <h1 class="title">曹大海</h1>
+        </section>
+        <section>
+            <hr class="line">
+        </section>
+        <section>
+            <header class="title">
+                <h3><span class="square">&nbsp;&nbsp;</span>&nbsp;我的选课</h3>
+            </header>
+        </section>
+        <section>
+            <table class="classCalender" cellspacing="0">
+                <thead>
+                    <tr class="theadTr">
+                        <th class="theadTd">上课时间</th>
+                        <th class="theadTd">星期一</th>
+                        <th class="theadTd">星期二</th>
+                        <th class="theadTd">星期三</th>
+                        <th class="theadTd">星期四</th>
+                        <th class="theadTd">星期五</th>
+                        <th class="theadTd">星期六</th>
+                        <th class="theadTd">星期日</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="cellTr1" onclick="clickRow();">
+                        <td class="cellTd">8:50-11:25</td>
+                        <td class="cellTd">数据结构</td>
+                        <td class="cellTd"></td>
+                        <td class="cellTd">编译原理</td>
+                        <td class="cellTd"></td>
+                        <td class="cellTd">操作系统</td>
+                        <td class="cellTd"></td>
+                        <td class="cellTd"></td>
+                    </tr>
+                    <tr class="cellTr2">
+                        <td class="cellTd">14:00-16:00</td>
+                        <td class="cellTd"></td>
+                        <td class="cellTd">数字模拟电路</td>
+                        <td class="cellTd">计算机系统结构</td>
+                        <td class="cellTd"></td>
+                        <td class="cellTd">体育课</td>
+                        <td class="cellTd"></td>
+                        <td class="cellTd"></td>
+                    </tr>
+                    <tr class="cellTr1">
+                        <td class="cellTd">18:30-21:30</td>
+                        <td class="cellTd"></td>
+                        <td class="cellTd">计算机组成原理</td>
+                        <td class="cellTd">C语言</td>
+                        <td class="cellTd"></td>
+                        <td class="cellTd"></td>
+                        <td class="cellTd"></td>
+                        <td class="cellTd"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="cellFootTr2">
+                        <td rowspan="2" class="cellTd">注：</td>
+                        <td colspan="3" class="cellTd">上课地点：三教2302（教室课容:120）</td>
+                        <td colspan="4" class="cellTd">答疑时间：每周下午2：00</td>
+                    </tr>
+                    <tr class="cellFootTr1">
+                        <td colspan="3" class="cellTd">上课通知：学堂在线提醒</td>
+                        <td colspan="4" class="cellTd">班主任：闻立杰</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </section>
+        <section>
+            <header class="title">
+                <h3><span class="square">&nbsp;&nbsp;</span>&nbsp;我的收藏视频</h3>
+            </header>
+        </section>
+        <section class="videoClass">
+            <!--
+                属性        值           描述
+                autoplay	autoplay	如果出现该属性，则视频在就绪后马上播放。
+                controls	controls	如果出现该属性，则向用户显示控件，比如播放按钮。
+                height	    pixels	    设置视频播放器的高度。
+                loop	    loop	    如果出现该属性，则当媒介文件完成播放后再次开始播放。
+                muted	    muted	    如果出现该属性，视频的音频输出为静音。
+                poster	    URL	        规定视频正在下载时显示的图像，直到用户点击播放按钮。
+                preload	    auto
+                metadata
+                none	                如果出现该属性，则视频在页面加载时进行加载，并预备播放。如果使用 "autoplay"，则忽略该属性。
+                src       	URL	        要播放的视频的 URL。
+                width	    pixels	    设置视频播放器的宽度。
+
+            -->
+
+            <video width="480" height="360" controls>
+                <source src="movie.mp4" type="video/mp4">
+                <source src="movie.ogg" type="video/ogg">
+                您的浏览器不支持 HTML5 video 标签。
+            </video>
+        </section>
+        <section>
+            <header class="title">
+                <h3><span class="square">&nbsp;&nbsp;</span>&nbsp;我的收藏音频</h3>
+            </header>
+        </section>
+        <section class="videoClass">
+            <!--
+            属性	    值	         描述
+            autoplay	autoplay	如果出现该属性，则音频在就绪后马上播放。
+            controls	controls	如果出现该属性，则向用户显示控件，比如播放按钮。
+            loop	    loop	    如果出现该属性，则每当音频结束时重新开始播放。
+            muted	    muted	    规定视频输出应该被静音。
+            preload	    auto
+                        metadata
+                        none	
+                                    如果出现该属性，则音频在页面加载时进行加载，并预备播放。
+
+                                    如果使用 "autoplay"，则忽略该属性。
+
+            src       	URL	        要播放的音频的 URL。
+
+            -->
+            <audio controls>
+                <source src="horse.ogg">
+                <source src="horse.mp3">
+                您的浏览器不支持 audio 元素。
+            </audio>
+        </section>
+        <section>
+            <header class="title">
+                <h3><span class="square">&nbsp;&nbsp;</span>&nbsp;上传视频或音频文件</h3>
+            </header>
+            <div>
+                <select name="type" class="formSelect">
+                    <option value="0">音频</option>
+                    <option value="1">视频</option>
+                </select><input type="file" class="formInput" name="upload" accept="video/*,audio/*" /><!--  -->
+            </div>
+        </section>
+
+        <section>
+            <header class="title">
+                <h3><span class="square">&nbsp;&nbsp;</span>&nbsp;SVG绘图</h3>
+            </header>
+            <svg width="100%" height="500"></svg>
+            方形控制器：<input type="range" min="1" max="60" value="20" oninput="moveSlider(this, 'x')" />
+            <input type="range" min="1" max="40" value="10" oninput="moveSlider(this, 'y')" />
+            圆形控制器：<input type="range" min="1" max="60" value="20" oninput="moveSlider1(this, 'x')" />
+            <input type="range" min="1" max="40" value="10" oninput="moveSlider1(this, 'y')" />
+        </section>
+
+        <section>
+            <header class="title">
+                <h3><span class="square">&nbsp;&nbsp;</span>&nbsp;D3绘图</h3>
+            </header>
+            <svg id="d3drawing" width="100%" height="500"></svg>
+        </section>
+
+        <section>
+            <header class="title">
+                <h3><span class="square">&nbsp;&nbsp;</span>&nbsp;Canvas绘图</h3>
+            </header>
+            <canvas id="canvas" width="1000" height="1000"></canvas>
+        </section>
+
+    </main>
+    <footer>
+        <p>&copy; 2023 曹大海 </p>
+    </footer>
+
+    <script>
+
+        function clickRow() {
+            alert("你点击我了！");
+        }
+
+        // targeting the svg itself
+        const svg = document.querySelector("svg");
+
+        // variable for the namespace 
+        const svgns = "http://www.w3.org/2000/svg";
+
+        // make a simple rectangle
+        let newRect = document.createElementNS(svgns, "rect");
+        newRect.setAttribute("id", "target");
+        newRect.setAttribute("x", "150");
+        newRect.setAttribute("y", "150");
+        newRect.setAttribute("width", "100");
+        newRect.setAttribute("height", "100");
+        newRect.setAttribute("fill", "#006699");
+
+
+        let newCircle = document.createElementNS(svgns, "circle");
+        newCircle.setAttribute("id", "newCircle");
+        newCircle.setAttribute("cx", "350");
+        newCircle.setAttribute("cy", "150");
+        newCircle.setAttribute("r", "50");
+        newCircle.setAttribute("stroke", "#000000");
+        newCircle.setAttribute("fill", "#6699cc");
+
+        // append the new rectangle to the svg
+        svg.appendChild(newRect);
+        svg.appendChild(newCircle);
+
+        var element = document.createElementNS(svgns, 'text');
+        element.setAttributeNS(null, 'x', 5);
+        element.setAttributeNS(null, 'y', 15);
+        var txt = document.createTextNode("Hello World");
+        element.appendChild(txt);
+        svg.appendChild(element);
+
+        var moveSlider = function (slider, direction) {
+            var value = slider.value;
+            var circle = document.getElementById("target");
+            var coord = direction;
+            circle.setAttributeNS(null, coord, value * 5);
+        }
+
+        var moveSlider1 = function (slider, direction) {
+            var value = slider.value;
+            var circle = document.getElementById("newCircle");
+            var coord = "c" + direction;
+            circle.setAttributeNS(null, coord, value * 5);
+        }
+
+    </script>
+
+    <script>
+        let body = d3.select("body");
+        let svg1 = body.select("#d3drawing");
+        // 创建比例尺
+        var x = d3.scaleLinear()
+            .domain([0, 1000])
+            .range([0, 1000]);
+        // 显示与此比例对应的轴
+        svg1.call(d3.axisBottom(x));
+
+        //在svg中绘制
+        svg1.append("g")//添加g元素
+            .append('rect')
+            .attr('x', 30)
+            .attr('y', 50)
+            .attr("rx", 10)
+            .attr('width', 50)
+            .attr('height', 100)
+            .attr('fill', '#00AEA6');
+
+        svg1.append("g")//添加g元素
+            .append('circle')
+            .attr('cx', 150)
+            .attr('cy', 150)
+            .attr('r', 50)
+            .attr('stroke', "#888888")
+            .style("opacity", 0.5) // 修改svg图形透明度
+            .style("stroke-opacity", 0.5) // 修改svg图形透明度
+            .attr('stroke-width', 2)
+            .attr('fill-opacity', 0.8)
+            .attr('fill', '#00AEA6');
+
+        svg1.append("ellipse")
+            .attr("cx", "400")
+            .attr("cy", "250")
+            .attr("rx", "100")
+            .attr("ry", "50")
+            .style("fill", "green")
+            .style("opacity", "0.5");
+
+        svg1.append("line")
+            .attr("x1", "100")
+            .attr("y1", "150")
+            .attr("x2", "200")
+            .attr("y2", "300")
+            .style("stroke", "steelblue")
+            .style("stroke-width", "2");
+
+        var points = [[200, 100], [250, 150], [250, 200], [200, 250], [150, 200], [150, 150]];
+        svg1.append("polyline")
+            .attr("points", points)
+            .style('fill', 'none')
+            .style("stroke", "steelblue")
+            .style("stroke-width", "2");
+
+        var points = [[500, 100], [550, 150], [550, 200], [500, 250], [450, 200], [450, 150]];
+        svg1.append("polygon")
+            .attr("points", points)
+            .style('fill', 'yellowgreen')
+            .style("stroke", "steelblue")
+            .style("stroke-width", "2");
+
+        svg1.append("path")
+            .attr("d", "M30,50 L200,200")
+            .style("stroke", "black")
+            .style("stroke-width", "1");
+        svg1.append("path")
+            .attr("d", "M30,50 H200")
+            .style("stroke", "red")
+            .style("stroke-width", "1");
+        svg1.append("path")
+            .attr("d", "M30,50 V200")
+            .style("stroke", "blue")
+            .style("stroke-width", "1");
+
+
+        let dx = 40, x1 = 50, y1 = 50, x2 = 300, y2 = 300;
+        let dy = Math.round(Math.abs(((y2 - y1) / (x2 - x1)) * dx));
+        //向右上弯曲
+        let cpx = Math.round((x1 + x2) / 2 + dx);
+        let cpy = Math.round((x1 + x2) / 2 - dy);
+
+        var path = d3.path();
+        path.moveTo(x1, y1);
+        path.quadraticCurveTo(cpx, cpy, x2, y2);
+
+        svg1.append('path')
+            .attr('d', path.toString())
+            .style('fill', 'none')
+            .style('stroke', 'red')
+            .style('stroke-width', '2');
+
+
+        dx = 600, dy = 100, x1 = 50, y1 = 50, x2 = 300, y2 = 300;
+        var path = d3.path();
+        let cpx1 = x1 - dx;
+        let cpy1 = y1 + dy;
+        let cpx2 = x2 + dx;
+        let cpy2 = y2 - dy;
+        path.moveTo(x1, y1);
+        path.bezierCurveTo(cpx1, cpy1, cpx2, cpy2, x2, y2);
+        svg1.append('path')
+            .attr('d', path.toString())
+            .style('fill', 'none')
+            .style('stroke', 'red')
+            .style('stroke-width', '2');
+
+
+        var path = d3.path();
+        path.moveTo(500, 420);
+        path.arc(500, 420, 60, -Math.PI, -0.5 * Math.PI);
+        svg1.append('path')
+            .attr('d', path.toString())
+            .style('fill', 'lightgrey')
+            .style('stroke', 'red')
+            .style('stroke-width', '2');
+
+
+        var arrowMarker = svg1.append("defs")
+            .append("marker")
+            .attr("id", "arrow")
+            .attr("markerUnits", "strokeWidth")
+            .attr("markerWidth", 12) // 这个箭头的大小
+            .attr("markerHeight", 12) // 这个箭头的大小
+            .attr("viewBox", "0 0 10 10") // 显示部分视野
+            .attr("refX", 6) // 中间点
+            .attr("refY", 6) // 中间点
+            .attr("orient", "auto")
+            .append("path")
+            .attr("d", "M2,2 L10,6 L2,10 L6,6 L2,2")
+            .attr("fill", "red");
+
+        var line = svg1.append("line")
+            .attr("x1", 250)
+            .attr("y1", 250)
+            .attr("x2", 400)
+            .attr("y2", 250)
+            .attr("stroke", "red")
+            .attr("stroke-width", 1)
+            .attr("marker-start", "url(#arrow)")
+            .attr("marker-end", "url(#arrow)");
+
+    </script>
+
+    <script>
+
+        draw('canvas');
+        draw1('canvas');
+
+        function draw(id) {
+            var canvas = document.getElementById(id);
+            var context = canvas.getContext('2d');
+            context.fillStyle = "white"
+            context.fillRect(0, 0, 1000, 1000);
+            for (var i = 0; i < 10; i++) {
+                context.beginPath();
+                context.arc(i * 25, i * 25, i * 10, 0, Math.PI * 2, true);
+                context.closePath();
+                context.fillStyle = "rgba(255,0,0,0.25)";
+                context.fill();
+                context.strokeStyle = "red";
+                context.stroke();
+            }
+
+            for (var i = 0; i < 5; i++) {
+                context.beginPath();
+                let coord = Math.pow(2, i) * 50;
+                context.moveTo(coord, coord);
+                context.lineTo(2 * coord, coord);
+                context.lineTo(2 * coord, 2 * coord);
+                context.lineTo(coord, 2 * coord);
+                context.lineTo(coord, coord);
+                context.closePath();
+                context.fillStyle = "rgba(177,189,17,0.5)";
+                context.fill();
+                context.strokeStyle = "blue";
+                context.stroke();
+            }
+        }
+
+        function draw1(id) {
+            var canvas = document.getElementById(id);
+            var context = canvas.getContext('2d');
+            context.fillStyle = "rgba(122,167,178,0.7)";
+            context.fillRect(0, 400, 800, 300);
+            context.strokeStyle = '#fff';
+            context.font = "bold 40px '字体','字体','微软雅黑','宋体'";
+            context.textBaseline = 'hanging';
+            context.fillText('欢迎浏览Dahai写的', 10, 440);
+            context.fillText('Canvas设计', 40, 510);
+            context.fillText('Hello....', 580, 580);
+
+        }
+
+    </script>
+
+    <script>
+        // 创建一个新的 Web Worker
+        var worker = new Worker('worker.js');
+        // 向 Worker 发送消息
+        worker.postMessage({ data: 'hello' });
+        // 监听来自 Worker 的消息
+        worker.onmessage = function (event) {
+            console.log('Received message from worker:', event.data);
+        };
+        setTimeout(function () {
+            worker.terminate();
+            //terminate方法用于关闭worker线程
+        }, 2000);
+
+        setTimeout(function () {
+            //再次开启worker线程
+            worker = new Worker('worker.js');
+            // 向 Worker 发送消息
+            worker.postMessage({ data: 'hello222' });
+            // 监听来自 Worker 的消息
+            worker.onmessage = function (event) {
+                console.log('Received message from worker11:', event.data);
+            };
+        }, 3000);
+
+
+    </script>
+</body>
+
+</html>
