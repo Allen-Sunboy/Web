@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清华大学无线校园网 Tsinghua University Wireless Network</title>
+    <link rel="icon" href="image/icon32.png">
+    <link rel="stylesheet" href="index.css">
+    
+    <script>
+        function login() {
+            var uname = document.getElementById('uname').value;
+            var password = document.getElementById('password').value;
+
+            if(uname == "" || password == "") {
+                alert("用户名或密码为空");
+            }
+            else {
+                window.location.href = 'succeed.html?uname=' + uname;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <main>
+        <!-- 顶部logo 清华大学无线校园网 -->
+        <div class="logo">
+            <div class="title"></div>
+        </div>
+
+        <!-- 上方二维码 -->
+        <div class="qrcode">
+            <img src="image/qrcode_for_258.jpg" width="129" height="129">
+            <p>欢迎关注“清华大学信息服务”</p>
+        </div>
+
+        <!-- 上方At Tsinghua图片 -->
+        <div class="attsinghua">
+            <a href="http://mobileapp.tsinghua.edu.cn" target="_blank">
+                <img src="image/attsinghua.png">
+            </a>
+        </div>
+
+        <!-- 中间内容 -->
+        <div class="content">
+            <!-- 橙色背景hi -->
+            <div class="hi"></div>
+
+            <!-- 左下角橙色三角形 -->
+            <div class="triangle_left"></div>
+
+            <!-- 通知 -->
+            <div class="notice_box">
+                <div class="corner"></div>
+                <div class="notice">
+                    <div class="notice_content">
+                        各位师生员工：清青牛拉餐厅将于7月16日（星期日）起恢复营业。暑假期间营业时间：午餐10：30—14:30，晚餐16：30—22:00
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧白色登录界面 -->
+            <div class="login">
+                <!-- 登录表单 -->
+                <form>
+                    <div class="field">
+                        <label for="uname">
+                            <p>用户名</p>
+                            <p class="en">User&nbsp;ID</p>
+                        </label>
+                        <input type="text" name="uname" id="uname">
+                    </div>
+                    <div class="field">
+                        <label for="password">
+                            <p>密码</p>
+                            <p class="en">Password</p>
+                        </label>
+                        <input type="password" name="password" id="password">
+                    </div>
+
+                    <!-- 按钮 连接 -->
+                    <input type="button" name="connect" class="connect" onclick="login()">
+                </form>
+            </div>
+
+            <!-- 右侧白色三角形 -->
+            <div class="triangle_right"></div>
+
+            <!-- 左下角下载客户端 -->
+            <div class="download">
+                <ul id="system">
+                    <li><a class="windows" title="Windows">Windows</a></li>
+                    <li><a class="macos" title="MacOS">MacOS</a></li>
+                    <li><a class="linux" title="Linux">Linux</a></li>
+                    <li><a class="android" title="Android">Android</a></li>
+                    <li><a class="ios" title="iOS">iOS</a></li>
+                </ul>
+            </div>
+
+            <!-- 右下角菜单 -->
+            <ul id="menu">
+                <li class="bookmark">
+                    <a href="javascript:addBookmark('TUNet 无线网登录');" title="收藏">
+                        <p>收藏</p>
+                        <p class="en">Bookmark&nbsp;This&nbsp;Page</p>
+                    </a>
+                </li>
+                <li class="help">
+                    <a href="https://net.tsinghua.edu.cn/help/help.html" title="帮助">
+                        <p>帮助</p>
+                        <p class="en">Help</p>
+                    </a>
+                </li>
+                <li class="contact">
+                    <div class="title">
+                        <p>联系</p>
+                        <p class="en">Contact</p>
+                    </div>
+                    <div class="detail en">
+                        <p>+86-10-62784859</p>
+                        <a href="mailto:its@tsinghua.edu.cn" title="电子邮件">its@tsinghua.edu.cn</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 底部信息 -->
+        <div class="foot">
+            <p>清华大学信息化技术中心</p>
+            <p class="en">Information Technology Center of Tsinghua University</p>
+        </div>
+
+    </main>
+</body>
+</html>

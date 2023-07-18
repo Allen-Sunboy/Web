@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清华大学校园网 Tsinghua University Network</title>
+    <link rel="icon" href="image/icon32.png">
+    <link rel="stylesheet" href="succeed.css">
+    
+    <script>
+        window.onload = function() {
+            var queryString = window.location.search;
+            let params = new URLSearchParams(queryString);
+            let uname = params.get('uname');
+            document.getElementById('uname').innerHTML = uname;
+        }
+
+        function logout() {
+            window.location.href = 'index.html';
+        }
+
+    </script>
+</head>
+<body>
+    <main>
+        <!-- 橙色欢迎背景 -->
+        <div class="welcome"></div>
+        
+        <!-- 左下角橙色三角形 -->
+        <div class="triangle"></div>
+
+        <!-- 中间白色区域 -->
+        <div class="info">
+            <h1 id="uname"></h1>
+            <div class="content">
+                <div class="label_text">
+                    <p>已连接</p>
+                    <p class="en">Duration</p>
+                </div>
+
+                <div class="content_text">
+                    <span id="clock">11:45:14</span>
+                </div>
+
+                <div class="label_text">
+                    <p>已用流量</p>
+                    <p class="en">Usage</p>
+                </div>
+                
+                <!-- 流量条 -->
+                <div class="usage_bar">
+                    <ul class="scale">
+                        <li>20</li>
+                        <li>30</li>
+                        <li>40</li>
+                        <li>50</li>
+                    </ul>
+
+                    <div id="usage_value"></div>
+                    <div class="blank"></div>
+                    <div class="blank b2"></div>
+                    <div class="content_text">
+                        <span id="value">26.15G</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- 右侧有个小的灰色三角形 -->
+        <div class="corner"></div>
+
+        <!-- 右下角断开连接按钮 -->
+        <div class="connect_button">
+            <button title="断开连接" class="disconnect" onclick="logout()"></button>
+        </div>
+
+        <!-- 右下角4个外部链接 -->
+        <ul class="links">
+            <li id="link_info">
+                <a href="http://info.tsinghua.edu.cn/" target="_blank" title="清华信息门户 info.tsinghua">Info</a>
+            </li>
+            <li id="link_lib">
+                <a href="http://lib.tsinghua.edu.cn/" target="_blank" title="清华图书馆 lib.tsinghua">Lib</a>
+            </li>
+            <li id="link_learn">
+                <a href="http://learn.tsinghua.edu.cn/" target="_blank" title="清华网络学堂 learn.tsinghua">Learn</a>
+            </li>
+            <li id="link_mail">
+                <a href="http://mail.tsinghua.edu.cn/" target="_blank" title="清华邮箱 mail.tsinghua">Mail</a>
+            </li>
+        </ul>
+        
+    </main>
+</body>
+</html>
