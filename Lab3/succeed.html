@@ -6,20 +6,7 @@
     <title>清华大学校园网 Tsinghua University Network</title>
     <link rel="icon" href="image/icon32.png">
     <link rel="stylesheet" href="succeed.css">
-    
-    <script>
-        window.onload = function() {
-            var queryString = window.location.search;
-            let params = new URLSearchParams(queryString);
-            let uname = params.get('uname');
-            document.getElementById('uname').innerHTML = uname;
-        }
-
-        function logout() {
-            window.location.href = 'index.html';
-        }
-
-    </script>
+    <script src="succeed.js"></script>
 </head>
 <body>
     <main>
@@ -39,7 +26,7 @@
                 </div>
 
                 <div class="content_text">
-                    <span id="clock">11:45:14</span>
+                    <span id="clock">00:00:00</span>
                 </div>
 
                 <div class="label_text">
@@ -60,7 +47,7 @@
                     <div class="blank"></div>
                     <div class="blank b2"></div>
                     <div class="content_text">
-                        <span id="value">26.15G</span>
+                        <span id="value"></span>
                     </div>
 
                 </div>

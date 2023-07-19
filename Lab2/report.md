@@ -4,7 +4,7 @@
 
 ## 1 实现思路
 
-首先是实现作业二的页面index.html，之前作业一的页面在本作业中命名为succeed.html。
+首先是实现作业二的页面index.html，之前作业一的页面在本作业中命名为succeed.html。此外，本作业将css和js的内容改为与html分离，单独写在别的文件中。
 
 在body的main中，依次放置logo（左上角清华大学无线校园网），qrcode（右上角二维码），attsinghua（右上角At Tsinghua），content（中间的主体界面），foot（底部信息）。
 
@@ -17,11 +17,11 @@ function login() {
     var uname = document.getElementById('uname').value;
     var password = document.getElementById('password').value;
 
-    if(uname == "" || password == "") {
+    if (uname == "" || password == "") {
         alert("用户名或密码为空");
     }
     else {
-        window.location.href = 'succeed.html?uname=' + uname;
+        location.href = 'succeed.html?uname=' + uname;
     }
 }
 ```
@@ -30,9 +30,9 @@ function login() {
 
 ```js
 window.onload = function() {
-    var queryString = window.location.search;
-    let params = new URLSearchParams(queryString);
-    let uname = params.get('uname');
+    var queryString = location.search;
+    var params = new URLSearchParams(queryString);
+    var uname = params.get('uname');
     document.getElementById('uname').innerHTML = uname;
 }
 ```
@@ -41,7 +41,7 @@ window.onload = function() {
 
 ```js
 function logout() {
-    window.location.href = 'index.html';
+    location.href = 'index.html';
 }
 ```
 
